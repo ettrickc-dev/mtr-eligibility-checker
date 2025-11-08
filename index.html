@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Free Motion to Reopen (MTR) — Eligibility Checker + Draft Statement</title>
+<meta name="description" content="Find out if you may qualify for a Motion to Reopen and get a lawyer-formatted first-draft statement by email. Free draft; optional same-day attorney upgrade."/>
+<style>
+  body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#fff;color:#111}
+  header,footer{padding:18px 16px;border-bottom:1px solid #eee}
+  footer{border-top:1px solid #eee;border-bottom:none;color:#666}
+  .wrap{max-width:900px;margin:0 auto;padding:16px}
+  h1{font-size:28px;margin:10px 0 8px}
+  p.lead{font-size:16px;margin:0 0 16px}
+  .cta{background:#0a7;color:#fff;padding:14px 18px;border-radius:10px;text-decoration:none;display:inline-block;margin:10px 0}
+  .grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:16px}
+  .card{border:1px solid #eee;border-radius:12px;padding:16px}
+  .badges{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
+  .badge{background:#eef;border:1px solid #dde;border-radius:999px;padding:6px 10px;font-size:12px}
+  .price{border:2px solid #eee;border-radius:12px;padding:14px;margin:10px 0}
+  .price h3{margin:0 0 6px}
+  .muted{color:#666}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap"><strong>Ettrick Campbell, Esq.</strong> • Immigration Help</div>
+</header>
+
+<main class="wrap">
+  <h1>Free Motion to Reopen (MTR) — Eligibility Checker + Draft Statement</h1>
+  <p class="lead">Answer simple questions → get a <strong>lawyer-formatted draft</strong> by email. <strong>Same-day attorney upgrade</strong> available.</p>
+  <div class="badges">
+    <div class="badge">✅ Many don’t know they were ordered removed</div>
+    <div class="badge">✅ PDF delivered to your email</div>
+    <div class="badge">✅ Upgrade for full motion packet</div>
+  </div>
+
+  <a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLSeHCQqwypv5Q6VUynJNRtWcVsj7DP6njuuIeEmBP6aBwu6uEg/viewform?usp=header" target="_blank" rel="noopener">Start Free MTR Checker</a>
+
+  <div class="grid">
+    <div class="card">
+      <h2>How it works</h2>
+      <ol>
+        <li>Check eligibility (in minutes).</li>
+        <li>Receive a <strong>first-draft personal statement</strong> + exhibit index.</li>
+        <li>Upgrade if you want us to <strong>prepare the formal motion</strong> and file.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>Instant Upgrades</h2>
+      <div class="price">
+        <h3>$59 — Draft Review (48h)</h3>
+        <p class="muted">Line-by-line edits + improvement notes.</p>
+        <div id="paypal-button-container-59"></div>
+      </div>
+      <div class="price">
+        <h3>$249 — Full MTR Packet</h3>
+        <p class="muted">Polished statement + labeled exhibits index + checklist.</p>
+        <div id="paypal-button-container-249"></div>
+      </div>
+      <div class="price">
+        <h3>$1,500+ — Full Representation</h3>
+        <p class="muted">We prepare, organize, and <strong>file</strong> your motion.</p>
+        <div id="paypal-button-container-1500"></div>
+      </div>
+      <p class="muted">After payment you’ll be sent to the Next Steps page to upload evidence.</p>
+    </div>
+
+    <div class="card">
+      <h2>What you get free</h2>
+      <ul>
+        <li>Lawyer-formatted draft statement</li>
+        <li>Eligibility track highlights (90-day/new evidence, in absentia, changed conditions, etc.)</li>
+        <li>Exhibit A–D organization plan</li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<footer class="wrap">
+  Attorney Advertising. Not legal advice. No attorney-client relationship until engagement is signed. © <span id="y"></span> Ettrick Campbell.
+</footer>
+
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+
+<!-- PayPal Buttons (LIVE) -->
+<script src="https://www.paypal.com/sdk/js?client-id=AfPYC5X8SuGxg9-OSVSFTNIP0xp8RPTBVSrrwF5SPB4fNjaDZ0B55Y5huMiiuWCJvW6eHRJLINN0F69l&currency=USD"></script>
+<script>
+function renderBtn(id, price, desc){
+  paypal.Buttons({
+    createOrder: (data, actions) => actions.order.create({
+      purchase_units:[{amount:{value:String(price)}, description:desc}]
+    }),
+    onApprove: (data, actions) => actions.order.capture().then(()=>{
+      window.location.href = "https://ettrickc-dev.github.io/mtr-eligibility-checker/thankyou.html";
+    })
+  }).render(id);
+}
+renderBtn('#paypal-button-container-59', 59, 'MTR Draft Review');
+renderBtn('#paypal-button-container-249', 249, 'Full MTR Packet');
+renderBtn('#paypal-button-container-1500', 1500, 'Full Representation');
+</script>
+</body>
+</html>
